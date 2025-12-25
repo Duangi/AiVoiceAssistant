@@ -1,0 +1,14 @@
+# 忽略 Python 编译生成的 pycache 文件夹（所有目录下的）
+__pycache__/
+
+# 同时建议忽略 .pyc/.pyo/.pyd 等编译文件（可选但推荐）
+*.py[cod]
+*$py.class
+
+# 忽略 Python 虚拟环境（如果项目用了 venv/conda）
+venv/
+env/
+.venv/
+
+/models
+

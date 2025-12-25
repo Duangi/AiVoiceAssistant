@@ -1,0 +1,37 @@
+{
+    // 指定默认的 Python 解释器路径
+    "python.defaultInterpreterPath": "/home/orangepi/miniconda3/envs/ai/bin/python",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+
+    // 配置 Pylance 的类型检查模式和诊断规则
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        // 1. 禁止使用未定义的变量（非常重要）
+        "reportUndefinedVariable": "error",
+        
+        // 2. 检测潜在的 None 类型操作（防止代码崩掉）
+        "reportOptionalMemberAccess": "warning",
+        "reportOptionalSubscript": "warning",
+        
+        // 3. 强迫你处理可能的类型错误，但不至于像 strict 那么过分
+        "reportGeneralTypeIssues": "warning",
+
+        // 4. 允许没有类型提示的第三方库（避免满屏红线）
+        "reportMissingTypeStubs": "none",
+        
+        // 5. 禁止在代码中留下没用的 import
+        "reportUnusedImport": "warning",
+
+        // 6. 警告未使用的变量
+        "reportUnusedVariable": "warning"
+    },
+
+    // Code Runner 和调试器的环境变量设置
+    // 让 VS Code 的调试器和播放按钮识别 .env 文件
+    "python.envFile": "${workspaceFolder}/.env",
+    // 让 Code Runner 运行时自动带上 PYTHONPATH 环境变量
+    "code-runner.executorMap": {
+        "python": "export PYTHONPATH=$workspaceRoot && python3 -u $fullFileName"
+    },
+    "code-runner.runInTerminal": true
+}
