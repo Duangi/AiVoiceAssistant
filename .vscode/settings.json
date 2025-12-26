@@ -31,7 +31,9 @@
     "python.envFile": "${workspaceFolder}/.env",
     // 让 Code Runner 运行时自动带上 PYTHONPATH 环境变量
     "code-runner.executorMap": {
-        "python": "export PYTHONPATH=$workspaceRoot && $pythonPath -u $fullFileName"
+        // 关键：先进入工作区根目录，再 export PYTHONPATH，最后执行
+        "python": "cd $workspaceRoot && export PYTHONPATH=. && $pythonPath -u $fullFileName"
     },
-    "code-runner.runInTerminal": true
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true
 }
