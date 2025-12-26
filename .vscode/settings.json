@@ -1,6 +1,6 @@
 {
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     // 指定默认的 Python 解释器路径
-    "python.defaultInterpreterPath": "/home/orangepi/miniconda3/envs/ai/bin/python",
     "python.terminal.activateEnvInCurrentTerminal": true,
 
     // 配置 Pylance 的类型检查模式和诊断规则
@@ -31,7 +31,7 @@
     "python.envFile": "${workspaceFolder}/.env",
     // 让 Code Runner 运行时自动带上 PYTHONPATH 环境变量
     "code-runner.executorMap": {
-        "python": "export PYTHONPATH=$workspaceRoot && python3 -u $fullFileName"
+        "python": "export PYTHONPATH=$workspaceRoot && $pythonPath -u $fullFileName"
     },
     "code-runner.runInTerminal": true
 }

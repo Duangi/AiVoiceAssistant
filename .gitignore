@@ -1,14 +1,32 @@
-# 忽略 Python 编译生成的 pycache 文件夹（所有目录下的）
+# --- Python 相关 ---
 __pycache__/
-
-# 同时建议忽略 .pyc/.pyo/.pyd 等编译文件（可选但推荐）
 *.py[cod]
 *$py.class
-
-# 忽略 Python 虚拟环境（如果项目用了 venv/conda）
-venv/
-env/
 .venv/
+.env
+*.swp
 
-/models
+# --- 模型文件 (最重要：不上传大文件) ---
+models/
+libs/rknn_packages/*.whl
 
+# --- 编译与临时文件 ---
+build/
+dist/
+*.egg-info/
+.cache/
+*.log
+
+# --- VS Code 相关 ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# --- 数据相关 ---
+data/
+*.wav
+*.pcm
+
+# --- 系统相关 ---
+.DS_Store
