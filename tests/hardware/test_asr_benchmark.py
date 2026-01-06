@@ -14,7 +14,7 @@ ENCODER_PATH = str(ZIPFORMER_DIR / "encoder-epoch-99-avg-1.rknn")
 DECODER_PATH = str(ZIPFORMER_DIR / "decoder-epoch-99-avg-1.rknn")
 JOINER_PATH  = str(ZIPFORMER_DIR / "joiner-epoch-99-avg-1.rknn")
 VOCAB_PATH   = str(ZIPFORMER_DIR / "vocab.txt")
-TEST_WAV     = str(PROJECT_ROOT / "tests/data/test.wav")
+TEST_WAV     = str(PROJECT_ROOT / "usb_mic_test.wav")
 
 def benchmark_streaming():
     print("🚀 开始 Zipformer 性能基准测试 (Benchmark)...")
